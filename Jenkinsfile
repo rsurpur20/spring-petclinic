@@ -2,11 +2,10 @@ node {
     agent { docker { image 'maven:3.9.6-eclipse-temurin-17-alpine' } }
 
     stage('build mvn') {
-            steps {
-                sh 'mvn --version'
-            }
+        sh 'mvn --version'
+
     }
-    
+
     stage('Checkout') {
         // Checkout the code from your version control system
         git branch: 'main', url: 'https://github.com/rsurpur20/spring-petclinic'
