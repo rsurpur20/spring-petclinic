@@ -1,7 +1,7 @@
 node {
     stage('Checkout') {
         // Checkout the code from your version control system
-        git 'https://github.com/rsurpur20/spring-petclinic'
+        git branch: 'main', url: 'https://github.com/rsurpur20/spring-petclinic'
     }
 
     stage('Build') {
