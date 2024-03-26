@@ -1,4 +1,13 @@
 node {
+
+    stage('Setup') {
+        // Define the Maven tool installation
+        def mvnHome = tool 'Maven'
+
+        // Add Maven bin directory to the PATH
+        env.PATH = "${mvnHome}/bin:${env.PATH}"
+    }
+
     stage('Checkout') {
         // Checkout the code from your version control system
         git branch: 'main', url: 'https://github.com/rsurpur20/spring-petclinic'
