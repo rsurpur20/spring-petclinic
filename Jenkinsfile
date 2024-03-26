@@ -1,9 +1,7 @@
-
-
 node {
     stage('Checkout') {
         // Checkout the code from your version control system
-        git 'https://github.com/your-repo-url'
+        git 'https://github.com/rsurpur20/spring-petclinic'
     }
 
     stage('Build') {
@@ -24,7 +22,7 @@ stage('SCM') {
     withSonarQubeEnv() {
       sh "${mvn}/mvn clean verify sonar:sonar -Dsonar.projectKey=devopsa4 -Dsonar.projectName='devopsa4'"
     }
-
+}
     try {
         // This block executes if the pipeline is successful
         echo 'Pipeline successfully completed!'
